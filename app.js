@@ -128,10 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
     }
+
     const menuItems = [
         { 
             name: 'Pizza Meat Lovers', 
-            price: 600, 
+            price: 630, 
             category: 'pizzas', 
             image: './imgs/Pizza_meat_lover.jpg',
             description: 'Mozzarella, pepperoni, salchicha italiana, jamón y bacon.',
@@ -141,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             name: 'Chicago Stuffed Pizza', 
-            price: 600, 
+            price: 360, 
             category: 'pizzas', 
             image: './imgs/pizza_chicago.jpg',
             description: 'Mozzarella, pepperoni, salchicha italiana, champiñones, pimientos y cebolla.',
@@ -257,52 +258,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderMenuItems(items) {
         menuContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
-    
+
         items.forEach(item => {
             const menuItem = document.createElement('div');
             menuItem.classList.add('menu-item');
             menuItem.setAttribute('data-category', item.category);
-    
+
             // Condiciones dietéticas
             let dietaryIcons = '';
             if (item.isVegan) dietaryIcons += '<img src="./imgs/vegan.svg" alt="Vegano">';
-            /*if (item.isVegetarian) dietaryIcons += '<img src="./icons/vegetarian.png" alt="Vegetariano">';*/
             if (item.isGlutenFree) dietaryIcons += '<img src="./icons/gluten_free.png" alt="Apto para celíacos">';
-    
+
             menuItem.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-info">
-                    <div class="dietary-icons"><p>${item.name}</p> ${dietaryIcons}</div>
-                    
-                    <p>${item.description}</p>
+                    <div class="item-info">
+                        <p>${item.name} </p>
+                        ${item.description}
+                    </div>
                     <p>$${item.price.toFixed(2)}</p>
-                    
+                    <div class="item-info">
+                        ${dietaryIcons}
+                    </div>
                     <button>+</button>
                 </div>
             `;
-    
+
+            // Asocia el evento de clic con la función addToCart
+            menuItem.querySelector('button').addEventListener('click', () => {
+                addToCart(menuItem);
+            });
+
             menuContainer.appendChild(menuItem);
         });
     }
-
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const category = event.target.getAttribute('data-category');
-            filterMenuItemsByCategory(category);
     
-            // Remover la clase 'active' de todos los botones
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-    
-            // Agregar la clase 'active' al botón seleccionado
-            event.target.classList.add('active');
-        });
-    });
-    
-    searchInput.addEventListener('input', (event) => {
-        const query = event.target.value;
-        filterMenuItemsByName(query);
-    });
-
     function filterMenuItemsByCategory(category) {
         const filteredItems = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
         renderMenuItems(filteredItems);
