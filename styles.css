@@ -178,6 +178,17 @@ header {
     right: 0;
 }
 
+.menu-item .item-title{
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.menu-item .item-diet{
+    width: 20px;
+    height: 20px;
+}
+
 .menu-item .item-info button:hover {
     background-color: #F2D6AD;
     color: #232323;

@@ -266,20 +266,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Condiciones dietéticas
             let dietaryIcons = '';
-            if (item.isVegan) dietaryIcons += '<img src="./imgs/vegan.svg" alt="Vegano">';
-            if (item.isGlutenFree) dietaryIcons += '<img src="./icons/gluten_free.png" alt="Apto para celíacos">';
+            if (item.isVegan) dietaryIcons += '<img src="./imgs/vegan.svg" alt="Vegano" class="item-diet">';
+            if (item.isGlutenFree) dietaryIcons += '<img src="./imgs/wheat.svg" alt="Apto para celíacos" class="item-diet">';
 
             menuItem.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-info">
-                    <div class="item-info">
+                    <div class="item-title">
                         <p>${item.name} </p>
-                        ${item.description}
+                        <div>
+                            ${dietaryIcons}
+                        </div>
+
                     </div>
+                    ${item.description}
                     <p>$${item.price.toFixed(2)}</p>
-                    <div class="item-info">
-                        ${dietaryIcons}
-                    </div>
                     <button>+</button>
                 </div>
             `;
@@ -292,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuContainer.appendChild(menuItem);
         });
     }
-    
+
     function filterMenuItemsByCategory(category) {
         const filteredItems = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
         renderMenuItems(filteredItems);
