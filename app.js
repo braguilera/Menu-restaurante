@@ -128,20 +128,127 @@ document.addEventListener('DOMContentLoaded', () => {
 
         totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
     }
-
     const menuItems = [
-        { name: 'Pizza Meat Lovers', price: 600, category: 'pizzas', image: './imgs/Pizza_meat_lover.jpg' },
-        { name: 'Chicago Stuffed Pizza', price: 600, category: 'pizzas', image: './imgs/pizza_chicago.jpg' },
-        { name: 'Pasta Carbonara', price: 450, category: 'pastas', image: './imgs/pasta_carbonara.jpg' },
-        { name: 'Pasta Alfredo', price: 500, category: 'pastas', image: './imgs/pasta_alfredo.jpg' },
-        { name: 'Hamburguesa Clásica', price: 300, category: 'hamburguesas', image: './imgs/hamburguesa_clasica.jpg' },
-        { name: 'Hamburguesa BBQ', price: 350, category: 'hamburguesas', image: './imgs/hamburguesa_BBQ.jpg' },
-        { name: 'Sopa de Pollo', price: 200, category: 'sopas', image: './imgs/sopa_de_pollo.jpg' },
-        { name: 'Sopa de Tomate', price: 180, category: 'sopas', image: './imgs/sopa_de_tomate.jpg' },
-        { name: 'Ensalada César', price: 250, category: 'ensaladas', image: './imgs/ensalada_cesar.jpg' },
-        { name: 'Ensalada Griega', price: 270, category: 'ensaladas', image: './imgs/ensalada_griega.jpg' },
-        { name: 'Cheesecake', price: 220, category: 'postres', image: './imgs/cheesecake.jpg' },
-        { name: 'Brownie con Helado', price: 240, category: 'postres', image: './imgs/brownie_con_helado.jpg' }
+        { 
+            name: 'Pizza Meat Lovers', 
+            price: 600, 
+            category: 'pizzas', 
+            image: './imgs/Pizza_meat_lover.jpg',
+            description: 'Mozzarella, pepperoni, salchicha italiana, jamón y bacon.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Chicago Stuffed Pizza', 
+            price: 600, 
+            category: 'pizzas', 
+            image: './imgs/pizza_chicago.jpg',
+            description: 'Mozzarella, pepperoni, salchicha italiana, champiñones, pimientos y cebolla.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Pasta Carbonara', 
+            price: 450, 
+            category: 'pastas', 
+            image: './imgs/pasta_carbonara.jpg',
+            description: 'Espaguetis, panceta, huevo, queso parmesano y pimienta.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Pasta Alfredo', 
+            price: 500, 
+            category: 'pastas', 
+            image: './imgs/pasta_alfredo.jpg',
+            description: 'Fettuccine, mantequilla, crema y queso parmesano.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Hamburguesa Clásica', 
+            price: 300, 
+            category: 'hamburguesas', 
+            image: './imgs/hamburguesa_clasica.jpg',
+            description: 'Carne de res, queso cheddar, lechuga, tomate y cebolla.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Hamburguesa BBQ', 
+            price: 350, 
+            category: 'hamburguesas', 
+            image: './imgs/hamburguesa_BBQ.jpg',
+            description: 'Carne de res, queso cheddar, cebolla crujiente y salsa BBQ.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Sopa de Pollo', 
+            price: 200, 
+            category: 'sopas', 
+            image: './imgs/sopa_de_pollo.jpg',
+            description: 'Caldo de pollo con verduras, arroz y trozos de pollo.',
+            isVegan: false, 
+            isVegetarian: false, 
+            isGlutenFree: true
+        },
+        { 
+            name: 'Sopa de Tomate', 
+            price: 180, 
+            category: 'sopas', 
+            image: './imgs/sopa_de_tomate.jpg',
+            description: 'Tomates frescos, crema, ajo y albahaca.',
+            isVegan: true, 
+            isVegetarian: true, 
+            isGlutenFree: true
+        },
+        { 
+            name: 'Ensalada César', 
+            price: 250, 
+            category: 'ensaladas', 
+            image: './imgs/ensalada_cesar.jpg',
+            description: 'Lechuga romana, crutones, queso parmesano y aderezo César.',
+            isVegan: false, 
+            isVegetarian: true, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Ensalada Griega', 
+            price: 270, 
+            category: 'ensaladas', 
+            image: './imgs/ensalada_griega.jpg',
+            description: 'Tomate, pepino, cebolla roja, aceitunas, queso feta y orégano.',
+            isVegan: false, 
+            isVegetarian: true, 
+            isGlutenFree: true
+        },
+        { 
+            name: 'Cheesecake', 
+            price: 220, 
+            category: 'postres', 
+            image: './imgs/cheesecake.jpg',
+            description: 'Base de galleta, queso crema y cobertura de frutas.',
+            isVegan: false, 
+            isVegetarian: true, 
+            isGlutenFree: false
+        },
+        { 
+            name: 'Brownie con Helado', 
+            price: 240, 
+            category: 'postres', 
+            image: './imgs/brownie_con_helado.jpg',
+            description: 'Brownie de chocolate con helado de vainilla.',
+            isVegan: false, 
+            isVegetarian: true, 
+            isGlutenFree: false
+        }
     ];
 
     const menuContainer = document.getElementById('menu-container');
@@ -150,29 +257,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderMenuItems(items) {
         menuContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
-
+    
         items.forEach(item => {
             const menuItem = document.createElement('div');
             menuItem.classList.add('menu-item');
             menuItem.setAttribute('data-category', item.category);
-
+    
+            // Condiciones dietéticas
+            let dietaryIcons = '';
+            if (item.isVegan) dietaryIcons += '<img src="./imgs/vegan.svg" alt="Vegano">';
+            /*if (item.isVegetarian) dietaryIcons += '<img src="./icons/vegetarian.png" alt="Vegetariano">';*/
+            if (item.isGlutenFree) dietaryIcons += '<img src="./icons/gluten_free.png" alt="Apto para celíacos">';
+    
             menuItem.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-info">
-                    <p>${item.name}</p>
+                    <div class="dietary-icons"><p>${item.name}</p> ${dietaryIcons}</div>
+                    
+                    <p>${item.description}</p>
                     <p>$${item.price.toFixed(2)}</p>
+                    
                     <button>+</button>
                 </div>
             `;
-
-            // Asocia el evento de clic con la función addToCart
-            menuItem.querySelector('button').addEventListener('click', () => {
-                addToCart(menuItem);
-            });
-
+    
             menuContainer.appendChild(menuItem);
         });
     }
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const category = event.target.getAttribute('data-category');
+            filterMenuItemsByCategory(category);
+    
+            // Remover la clase 'active' de todos los botones
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+    
+            // Agregar la clase 'active' al botón seleccionado
+            event.target.classList.add('active');
+        });
+    });
+    
+    searchInput.addEventListener('input', (event) => {
+        const query = event.target.value;
+        filterMenuItemsByName(query);
+    });
 
     function filterMenuItemsByCategory(category) {
         const filteredItems = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);

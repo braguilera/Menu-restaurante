@@ -134,13 +134,15 @@ header {
     backdrop-filter:blur(8px);
     box-shadow: 3px 3px 3px #23232383;
     border-radius: 10px;
+    height: 100px;
 }
 
 .menu-item img {
     max-width: 80px;
     margin-right: 15px;
     border-radius: 10px;
-
+    object-fit: cover;
+    object-position: center center;
 }
 
 .menu-item .item-info {
@@ -151,9 +153,14 @@ header {
     position: relative;
 }
 
+.dietary-icons{
+    display: flex;
+}
+
 .menu-item .item-info p {
     margin: 0;
     color: #F5F4F4;
+    padding: 10px 0 10px 0;
 }
 
 .menu-item .item-info button {
