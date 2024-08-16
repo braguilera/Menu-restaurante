@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    background: url(./imgs/Background_body.png);
+    color: #F5F4F4;
+}
+
+.header{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
+
+.header__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo{
+    margin-left: 20px;
+}
