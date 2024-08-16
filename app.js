@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const menuItems = [
-        { name: 'Pizza Meat Lovers', price: 600, category: 'pizzas', image: 'pizza_meat_lovers.jpg' },
+        { name: 'Pizza Meat Lovers', price: 600, category: 'pizzas', image: './imgs/Pizza_meat_lover.jpg' },
         { name: 'Chicago Stuffed Pizza', price: 600, category: 'pizzas', image: 'chicago_stuffed_pizza.jpg' },
         { name: 'Pasta Carbonara', price: 450, category: 'pastas', image: 'pasta_carbonara.jpg' },
         { name: 'Pasta Alfredo', price: 500, category: 'pastas', image: 'pasta_alfredo.jpg' },

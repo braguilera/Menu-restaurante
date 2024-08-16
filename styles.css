@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    background: url('black-texture.jpg') no-repeat center center fixed;
+    background: url(./imgs/Background_body.png) no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     color: #F5F4F4;
@@ -52,6 +52,8 @@ header {
     padding: 10px;
     border: none;
     border-radius: 20px;
+    font-family: 'Font Awesome 5 Free'; 
+    font-weight: 900;
 }
 
 /* Daily Promotion */
