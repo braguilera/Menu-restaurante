@@ -6,6 +6,8 @@ body {
     color: #F5F4F4;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    min-width: 200px;
 }
 
 header {
@@ -13,7 +15,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #232323;
 }
 
 .logo {
@@ -32,23 +33,24 @@ header {
 
 .cart span {
     position: absolute;
-    top: -10px;
+    bottom: 0;
     right: -10px;
     background-color: #F2D6AD;
     color: #232323;
     border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 0.8em;
+    padding: 2.5px 5px;
+    font-size: 0.5em;
 }
 
 /* Search Bar */
 .search-bar {
+    display: flex;
     padding: 10px;
-    background-color: #233D56;
+    justify-content: center;
 }
 
 .search-input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border: none;
     border-radius: 20px;
@@ -60,21 +62,31 @@ header {
 .daily-promotion {
     display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: #233D56;
+    background-color: #F5F4F4;
     border-radius: 10px;
     margin: 10px;
+    position: relative;
 }
 
 .daily-promotion img {
-    max-width: 100px;
-    margin-right: 20px;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
+    -webkit-mask-image: linear-gradient(#F5F4F4, transparent);
+    mask-image: linear-gradient (#F5F4F4, transparent);
 }
 
-.promotion-info p {
+.promotion-info{
+    position: absolute;
+    z-index: 2;
+    color: #232323;
+    margin-left: 20px;
+    bottom: 20px;
+}
+
+.promotion-title{
     margin: 0;
-    font-size: 0.9em;
+    font-size: 1.3em;
 }
 
 .promotion-info h2 {
@@ -89,30 +101,38 @@ header {
 }
 
 .menu-categories button {
-    background-color: #233D56;
-    color: #F5F4F4;
+    background: none;
+    font-weight: bold;
+    color: #7c7c7c;
     border: none;
-    padding: 10px 15px;
-    margin-right: 10px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .menu-categories button.active {
-    background-color: #F2D6AD;
-    color: #232323;
+    color: #F5F4F4;
+}
+
+.menu-categories button:hover {
+    color: #F2D6AD;
 }
 
 /* Menu Items */
+
 #menu-container {
-    padding: 10px;
+    padding: 5%
 }
 
 .menu-item {
     display: flex;
+    height: 40%;
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #232323;
+    background-color: #f5f4f41c;
+    backdrop-filter:blur(8px);
+    box-shadow: 3px 3px 3px #23232383;
     border-radius: 10px;
 }
 
@@ -126,6 +146,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    position: relative;
 }
 
 .menu-item .item-info p {
@@ -134,13 +156,17 @@ header {
 }
 
 .menu-item .item-info button {
+    position: absolute;
+    width: 8%;
     margin-top: 10px;
     padding: 5px;
     background-color: #7F592D;
     color: #F5F4F4;
     border: none;
-    border-radius: 5px;
+    border-radius: 100vmax;
     cursor: pointer;
+    bottom: 0;
+    right: 0;
 }
 
 .menu-item .item-info button:hover {

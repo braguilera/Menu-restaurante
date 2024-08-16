@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="item-info">
                     <p>${item.name}</p>
                     <p>$${item.price.toFixed(2)}</p>
-                    <button>Agregar</button>
+                    <button>+</button>
                 </div>
             `;
 
