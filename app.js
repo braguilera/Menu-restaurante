@@ -131,17 +131,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const menuItems = [
         { name: 'Pizza Meat Lovers', price: 600, category: 'pizzas', image: './imgs/Pizza_meat_lover.jpg' },
-        { name: 'Chicago Stuffed Pizza', price: 600, category: 'pizzas', image: 'chicago_stuffed_pizza.jpg' },
-        { name: 'Pasta Carbonara', price: 450, category: 'pastas', image: 'pasta_carbonara.jpg' },
-        { name: 'Pasta Alfredo', price: 500, category: 'pastas', image: 'pasta_alfredo.jpg' },
-        { name: 'Hamburguesa Clásica', price: 300, category: 'hamburguesas', image: 'hamburguesa_clasica.jpg' },
-        { name: 'Hamburguesa BBQ', price: 350, category: 'hamburguesas', image: 'hamburguesa_bbq.jpg' },
-        { name: 'Sopa de Pollo', price: 200, category: 'sopas', image: 'sopa_pollo.jpg' },
-        { name: 'Sopa de Tomate', price: 180, category: 'sopas', image: 'sopa_tomate.jpg' },
-        { name: 'Ensalada César', price: 250, category: 'ensaladas', image: 'ensalada_cesar.jpg' },
-        { name: 'Ensalada Griega', price: 270, category: 'ensaladas', image: 'ensalada_griega.jpg' },
-        { name: 'Cheesecake', price: 220, category: 'postres', image: 'cheesecake.jpg' },
-        { name: 'Brownie con Helado', price: 240, category: 'postres', image: 'brownie_helado.jpg' }
+        { name: 'Chicago Stuffed Pizza', price: 600, category: 'pizzas', image: './imgs/pizza_chicago.jpg' },
+        { name: 'Pasta Carbonara', price: 450, category: 'pastas', image: './imgs/pasta_carbonara.jpg' },
+        { name: 'Pasta Alfredo', price: 500, category: 'pastas', image: './imgs/pasta_alfredo.jpg' },
+        { name: 'Hamburguesa Clásica', price: 300, category: 'hamburguesas', image: './imgs/hamburguesa_clasica.jpg' },
+        { name: 'Hamburguesa BBQ', price: 350, category: 'hamburguesas', image: './imgs/hamburguesa_BBQ.jpg' },
+        { name: 'Sopa de Pollo', price: 200, category: 'sopas', image: './imgs/sopa_de_pollo.jpg' },
+        { name: 'Sopa de Tomate', price: 180, category: 'sopas', image: './imgs/sopa_de_tomate.jpg' },
+        { name: 'Ensalada César', price: 250, category: 'ensaladas', image: './imgs/ensalada_cesar.jpg' },
+        { name: 'Ensalada Griega', price: 270, category: 'ensaladas', image: './imgs/ensalada_griega.jpg' },
+        { name: 'Cheesecake', price: 220, category: 'postres', image: './imgs/cheesecake.jpg' },
+        { name: 'Brownie con Helado', price: 240, category: 'postres', image: './imgs/brownie_con_helado.jpg' }
     ];
 
     const menuContainer = document.getElementById('menu-container');
