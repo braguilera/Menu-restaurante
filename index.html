@@ -1,31 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="./estilos.css">
-
+    <title>Menú del Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <header class="header">
-        <div class="header__container">
-            <img src="./imgs/logo.svg" alt="Logo fictisio" class="header__logo">
-            <h1 class="header__mesa">Mesa x</h1>
-            <img src="./imgs/cart.svg" alt="Carrito de compras" class="header__cart">
+    <header>
+        <div class="logo">Logo</div>
+        <div class="mesa">Mesa x</div>
+        <div class="cart">
+            <span id="cart-count">0</span>
+            <img src="./imgs/cart.svg" alt="">
         </div>
-
     </header>
 
-    <section class="promociones">
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Buscar...">
+    </div>
 
+    <section class="daily-promotion">
+        <img src="gyozas.jpg" alt="Gyozas">
+        <div class="promotion-info">
+            <p>Promoción del día</p>
+            <h2>Gyozas</h2>
+        </div>
     </section>
 
-    <section class="menu">
+    <div class="menu-categories">
+        <button data-category="all">Todo</button>
+        <button data-category="pizzas">Pizzas</button>
+        <button data-category="pastas">Pastas</button>
+        <button data-category="hamburguesas">Hamburguesas</button>
+        <button data-category="sopas">Sopas</button>
+        <button data-category="ensaladas">Ensaladas</button>
+        <button data-category="postres">Postres</button>
+    </div>
 
-    </section>
+    <div id="menu-container">
+        <!-- Los elementos del menú se agregarán dinámicamente aquí -->
+    </div>
 
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total:</h3>
+                <p id="total-price">$0.00</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
