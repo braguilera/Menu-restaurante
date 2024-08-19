@@ -246,18 +246,25 @@ header {
     margin-bottom: 10px;
 }
 
+.cart-item p:first-child{
+    width: 100px;
+}
+
 .quantity-controls {
     display: flex;
     align-items: center;
+    width: 100px;
 }
 
 .quantity-controls button {
     background-color: #7F592D;
     border: none;
     color: #F5F4F4;
-    padding: 5px;
-    border-radius: 5px;
+    margin: 0 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
     cursor: pointer;
+    width: 30px;
 }
 
 .cart-total {
@@ -274,4 +281,12 @@ header {
 .cart-total p {
     font-size: 1.5em;
     margin: 5px 0 0;
+}
+
+.remove{
+    border: 1px solid #F5F4F4;
+    background-color: transparent;
+    color: #F5F4F4;
+    border-radius: 100vmax;
+    padding: 2px 6px;
 }
