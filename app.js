@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.isGlutenFree) dietaryIcons += '<img src="./imgs/wheat.svg" alt="Apto para celíacos" class="item-diet">';
 
             menuItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
+                <img loading="lazy" src="${item.image}" alt="${item.name}">
                 <div class="item-info">
                     <div class="item-title">
                         <p>${item.name} </p>
