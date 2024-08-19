@@ -297,14 +297,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterMenuItemsByCategory(category) {
         const filteredItems = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
         renderMenuItems(filteredItems);
+        
+        // Actualizar la clase activa en los botones de categoría
+        categoryButtons.forEach(button => {
+            button.classList.remove('active');
+            if (button.getAttribute('data-category') === category) {
+                button.classList.add('active');
+            }
+        });
     }
 
+    // Función para filtrar y renderizar los elementos del menú por nombre
     function filterMenuItemsByName(query) {
         const filteredItems = menuItems.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
         renderMenuItems(filteredItems);
     }
 
-    // Event listeners
+    // Event listeners para los botones de categoría
     categoryButtons.forEach(button => {
         button.addEventListener('click', (event) => {
             const category = event.target.getAttribute('data-category');
@@ -312,11 +321,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Event listener para el input de búsqueda
     searchInput.addEventListener('input', (event) => {
         const query = event.target.value;
         filterMenuItemsByName(query);
     });
 
-    // Render all items by default
+    // Render all items by default and set 'all' category as active
     renderMenuItems(menuItems);
+    filterMenuItemsByCategory('all');
 });
