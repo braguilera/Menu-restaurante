@@ -1,7 +1,6 @@
 /* General styles */
 body {
-    background: url(./imgs/Background_body.png) no-repeat center center fixed;
-    background-size: cover;
+    background: conic-gradient(from 135deg at 125% 0%, #232323, #4d4d4d, rgba(118,118,118,1));
     font-family: Arial, sans-serif;
     color: #F5F4F4;
     margin: 0;
@@ -9,7 +8,6 @@ body {
     box-sizing: border-box;
     max-width: 425px;
     margin: auto;
-    
 }
 
 header {
