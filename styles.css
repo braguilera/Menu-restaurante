@@ -1,6 +1,7 @@
 /* General styles */
 body {
-    background: conic-gradient(from 135deg at 125% 0%, #232323, #363636, rgb(48, 48, 48));
+
+    background-color: #0C0F14;
     font-family: Arial, sans-serif;
     color: #F5F4F4;
     margin: 0;
