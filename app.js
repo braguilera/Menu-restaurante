@@ -2,15 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCountElement = document.getElementById('cart-count');
     let cartCount = parseInt(cartCountElement.textContent, 10);
     let cartItems = [];
-    let orderHistory = [];
 
     const cartModal = document.getElementById('cart-modal');
     const cartIcon = document.querySelector('.cart');
     const closeModal = document.querySelector('.close');
     const cartItemsContainer = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
-    const orderHistoryContainer = document.getElementById('order-history');
-    const placeOrderButton = document.getElementById('place-order');
 
     // Abrir modal al hacer clic en el ícono del carrito
     cartIcon.addEventListener('click', () => {
@@ -27,16 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', (event) => {
         if (event.target === cartModal) {
             cartModal.style.display = 'none';
-        }
-    });
-
-    placeOrderButton.addEventListener('click', () => {
-        // Guardar en el historial
-        if (cartItems.length > 0) {
-            orderHistory.push(...cartItems);
-            cartItems = [];
-            updateCartModal();
-            updateOrderHistory();
         }
     });
 
@@ -410,5 +397,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
-
-
