@@ -61,6 +61,8 @@ header {
 }
 
 /* Daily Promotion */
+
+/*
 .daily-promotion {
     display: flex;
     align-items: center;
@@ -95,6 +97,62 @@ header {
 .promotion-info h2 {
     margin: 5px 0 0 0;
 }
+*/
+
+.promotions-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.promotions-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.promotions {
+    display: flex;
+}
+
+.promotion-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #233D56;
+    color: #F5F4F4;
+    border-radius: 10px;
+    position: relative;
+}
+
+.promotion-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.promotions-carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #F5F4F4;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.promotions-carousel .prev {
+    z-index: 2;
+    left: 10px;
+}
+
+.promotions-carousel .next {
+    right: 10px;
+}
+
 
 /* Menu Categories */
 .menu-categories {

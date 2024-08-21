@@ -330,4 +330,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render all items by default and set 'all' category as active
     renderMenuItems(menuItems);
     filterMenuItemsByCategory('all');
+
+    // Carrusel de promociones
+    const promotions = [
+        { 
+            name: 'Promo Pizza Familiar', 
+            price: 700, 
+            image: './imgs/promo_pizza_familiar.png',
+            description: 'Incluye una pizza familiar, 2 bebidas y un postre.'
+        },
+        { 
+            name: 'Combo Hamburguesas', 
+            price: 500, 
+            image: './imgs/combo_hamburguesas.png',
+            description: '2 hamburguesas BBQ, papas fritas y 2 bebidas.'
+        }
+    ];
+
+    const promotionsWrapper = document.querySelector('.promotions-wrapper .promotions');
+    let currentPromotionIndex = 0;
+
+    function renderPromotions() {
+        promotionsWrapper.innerHTML = ''; // Limpiar el contenedor antes de renderizar
+
+        promotions.forEach(promo => {
+            const promoItem = document.createElement('div');
+            promoItem.classList.add('promotion-item');
+
+            promoItem.innerHTML = `
+                <img loading="lazy" src="${promo.image}" alt="${promo.name}">
+                <div class="item-info">
+                    <p>${promo.name}</p>
+                    <p>${promo.description}</p>
+                    <p>$${promo.price.toFixed(2)}</p>
+                    <button>Agregar al carrito</button>
+                </div>
+            `;
+
+            // Asocia el evento de clic con la función addToCart
+            promoItem.querySelector('button').addEventListener('click', () => {
+                addToCart(promoItem);
+            });
+
+            promotionsWrapper.appendChild(promoItem);
+        });
+    }
+
+    function showPromotion(index) {
+        const offset = -index * 100;
+        promotionsWrapper.style.transform = `translateX(${offset}%)`;
+    }
+
+    document.querySelector('.promotions-carousel .prev').addEventListener('click', () => {
+        currentPromotionIndex = (currentPromotionIndex > 0) ? currentPromotionIndex - 1 : promotions.length - 1;
+        showPromotion(currentPromotionIndex);
+    });
+
+    document.querySelector('.promotions-carousel .next').addEventListener('click', () => {
+        currentPromotionIndex = (currentPromotionIndex < promotions.length - 1) ? currentPromotionIndex + 1 : 0;
+        showPromotion(currentPromotionIndex);
+    });
+
+    renderPromotions();
+    showPromotion(currentPromotionIndex);
+
+
+
 });
