@@ -28,13 +28,13 @@
 
     <p class="promotion-title">Promoción del día</p>
     <div class="promotions-carousel">
-        <button class="prev">&#10094;</button>
+        <button class="prev" id="prev-promo">&#10094;</button>
         <div class="promotions-wrapper">
             <div class="promotions">
                 <!-- Promociones se agregarán dinámicamente aquí -->
             </div>
         </div>
-        <button class="next">&#10095;</button>
+        <button class="next" id="next-promo">&#10095;</button>
     </div>
 
     <div class="menu-categories">
@@ -54,15 +54,15 @@
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Carrito</h2>
+            <h2>Tu Carrito</h2>
             <div id="cart-items"></div>
-            <hr>
-            <h3>Total: <span id="total-price">$0.00</span></h3>
+            <div class="cart-total">
+                <h3>Total:</h3>
+                <p id="total-price">$0.00</p>
+            </div>
             <button id="place-order">Hacer Pedido</button>
-            <hr>
-            <div id="order-history">
-                <h3>Historial de Pedidos</h3>
-                <!-- Historial de pedidos se agregará aquí -->
+            <div id="order-history" class="order-history">
+                <!-- Aquí se renderiza el historial de pedidos -->
             </div>
         </div>
     </div>
