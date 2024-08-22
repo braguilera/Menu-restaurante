@@ -120,17 +120,20 @@ header {
 .promotion-item {
     min-width: 100%;
     box-sizing: border-box;
-    padding: 20px;
-    background-color: #233D56;
+    background-color: #F5F4F4;
     color: #F5F4F4;
     border-radius: 10px;
     position: relative;
+    z-index: -2;
 }
 
 .promotion-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    position: absolute;
+    z-index: -1;
+    mask-image: linear-gradient(black 2%, transparent);
 }
 
 .promotions-carousel button {
@@ -145,12 +148,38 @@ header {
 }
 
 .promotions-carousel .prev {
+    color: #232323;
     z-index: 2;
     left: 10px;
 }
 
 .promotions-carousel .next {
+    color: #232323;
     right: 10px;
+}
+
+.promotions .item-info{
+    width: 80%;
+    color: #232323;
+    margin: 0 auto;
+
+}
+
+.promotions .item-info::first-line{
+    font-weight: bold;
+}
+
+.promotions button{
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    height: 32px;
+    background-color: #232323;
+    transform: translateY(60%);
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 
