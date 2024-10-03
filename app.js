@@ -361,8 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img loading="lazy" src="${promo.image}" alt="${promo.name}">
                 <div class="item-info">
                     <p>${promo.name}</p>
+                    <p>$${promo.price}</p>
                     <p>${promo.description}</p>
-                    <p>$${promo.price.toFixed(2)}</p>
                     <button>Agregar al carrito</button>
                 </div>
             `;
